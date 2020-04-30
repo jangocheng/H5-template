@@ -1,27 +1,23 @@
 <template>
+  <!-- !请务必在最外层div中添加id="app" 避免预渲染后页面vue绑定事件失效 -->
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="clickme">{{msg}}</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      msg: 'click me'
+    }
+  },
+  methods: {
+    clickme() {
+      alert('hello world')
+    }
   }
 }
 </script>
 
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>
+
